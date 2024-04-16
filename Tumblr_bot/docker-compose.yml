@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    
+    command: uvicorn server:app --host 0.0.0.0 --port 44777
+
+    ports:
+      - "44777:44777"
+    env_file:
+      - .env

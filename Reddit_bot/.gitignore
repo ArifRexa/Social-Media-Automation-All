@@ -1,0 +1,17 @@
+# Ignore Python bytecode files
+__pycache__
+
+# Ignore virtual environment directory
+venv/
+
+# Ignore IDE-specific files and directories
+.idea
+
+# Ignore log files
+reddit_bot.log/
+
+# Ignore environment variable file
+.env  # Ignore all files starting with ".env"
+!*.env.example  # Un-ignore files ending with ".env.example"
+
+co.py/

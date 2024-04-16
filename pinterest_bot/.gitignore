@@ -1,0 +1,12 @@
+.idea/**
+py3pin/__pycache__/**
+py3pin/data/**
+build/**
+dist/**
+py3_pinterest.egg-info/**
+test.py
+cred_root/**
+py3pin/cred_root/**
+venv/*
+.env  # Ignore all files starting with ".env"
+!*.env.example  # Un-ignore files ending with ".env.example"

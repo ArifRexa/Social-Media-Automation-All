@@ -1,0 +1,6 @@
+env
+__pycache__
+platform.txt
+chromedriver-*
+venv/
+Collected_data

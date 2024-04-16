@@ -1,0 +1,15 @@
+version: '3'
+services:
+#  selenium:
+#    image: selenium/standalone-chrome
+#    ports:
+#      - "4444:4444"
+
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile-selenium
+    ports:
+      - "8000:8000"
+#    depends_on:
+#      - selenium
