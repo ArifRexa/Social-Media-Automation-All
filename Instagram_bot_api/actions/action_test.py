@@ -56,9 +56,9 @@ class InstagramBot:
         self.client = Client()
         # Flag to track login status
         self.logged_in = False
-        self.obj = DatabaseOperation(host='http://127.0.0.1', port='44777',
-                                     database_name='checkbot', table_name='base_cred',
-                                     username='postgres', password='123456789')
+        self.obj = DatabaseOperation(host=os.getenv('DB_HOST'), port=os.getenv('DB_PORT'),
+                                     database_name=os.getenv('DB_NAME'), table_name=os.getenv('TABLE_NAME'),
+                                     username=os.getenv('DB_USERNAME'), password=os.getenv('DB_PASSWORD'))
         status_code, data = self.obj.post_request(
             endpoint="get?social_media_name__like=instagram&company_name__like=rig_network")
 

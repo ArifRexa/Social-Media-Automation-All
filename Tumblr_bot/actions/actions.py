@@ -2,7 +2,7 @@ import pytumblr
 import random
 import time
 import os
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import logging
 from datetime import datetime
 from multidb_request_handler import DatabaseOperation
@@ -14,7 +14,7 @@ class TumblrBot:
         self.logger.setLevel(logging.INFO)
 
         # Create log directory if it doesn't exist
-
+        load_dotenv()
         log_dir = "logs/Tumblr_Bot"
         if not os.path.exists(log_dir):
             os.makedirs(log_dir)
@@ -38,9 +38,12 @@ class TumblrBot:
         self.logger.addHandler(file_handler)
         self.logger.addHandler(console_handler)
 
-        obj = DatabaseOperation(host='http://127.0.0.1', port='44777',
-                                database_name='checkbot', table_name='base_cred',
-                                username='postgres', password='123456789')
+        # obj = DatabaseOperation(host='http://127.0.0.1', port='44777',
+        #                         database_name='checkbot', table_name='base_cred',
+        #                         username='postgres', password='123456789')
+        obj = DatabaseOperation(host=os.getenv('DB_HOST'), port=os.getenv('DB_PORT'),
+                                database_name=os.getenv('DB_NAME'), table_name=os.getenv('TABLE_NAME'),
+                                username=os.getenv('DB_USERNAME'), password=os.getenv('DB_PASSWORD'))
         # Assuming `obj.post_request(endpoint="get")` returns a tuple of status code and list of dictionaries
         status_code, data = obj.post_request(endpoint="get?social_media_name__like=tumblr&company_name__like=rig_network")
         consumer_key = None
@@ -60,7 +63,7 @@ class TumblrBot:
         else:
             self.logger.error(f"Failed to retrieve data. Status code: {status_code}")
 
-        # load_dotenv()
+
         # consumer_key = os.getenv("TUMBLR_CONSUMER_KEY")
         # consumer_secret = os.getenv("TUMBLR_CONSUMER_SECRET")
         # token_key = os.getenv("TUMBLR_TOKEN_KEY")

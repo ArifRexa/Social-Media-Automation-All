@@ -194,28 +194,28 @@ ig_dm_text = properties['Instagram']['dm_text']
 # print("send_dm_text:", ig_dm_text)
 
 
-ig_login_account_method()
-user_name_list = ig_follow_user_by_username.split(";")
-for username in user_name_list:
-    ig_follow_specific_users_by_username(usernames=username)
-
-user_name_list = ig_unfollow_user_by_username.split(";")
-for username in user_name_list:
-    ig_unfollow_specific_users_by_username(usernames=username)
-
-ig_like_action(hashtag=ig_like_hashtag, total_action=int(ig_like_number))
-
-ig_follow_action(hashtag=ig_follow_user_hashtag, total_action=int(ig_follow_user_number))
-
-ig_relevant_follow_action(hashtag=ig_follow_user_hashtag)
-
-ig_unfollow_non_followers()
-
-ig_comment_action(hashtag=ig_comment_hashtag, total_action=int(ig_comment_number), text=ig_comment_text)
-
-ig_comment_action_on_condition(hashtag=ig_comment_hashtag, text=ig_comment_text)
-ig_save_media(hashtag=ig_save_hashtag, num_posts=int(ig_save_bookmark))
-ig_unlike_action(media_id=ig_unlike_media_id)
-ig_send_message(text=ig_dm_text, username=ig_send_dm_message)
-
-ig_logout_account()
+# ig_login_account_method()
+# user_name_list = ig_follow_user_by_username.split(";")
+# for username in user_name_list:
+#     ig_follow_specific_users_by_username(usernames=username)
+#
+# user_name_list = ig_unfollow_user_by_username.split(";")
+# for username in user_name_list:
+#     ig_unfollow_specific_users_by_username(usernames=username)
+#
+# ig_like_action(hashtag=ig_like_hashtag, total_action=int(ig_like_number))
+#
+# ig_follow_action(hashtag=ig_follow_user_hashtag, total_action=int(ig_follow_user_number))
+#
+# ig_relevant_follow_action(hashtag=ig_follow_user_hashtag)
+#
+# ig_unfollow_non_followers()
+#
+# ig_comment_action(hashtag=ig_comment_hashtag, total_action=int(ig_comment_number), text=ig_comment_text)
+#
+# ig_comment_action_on_condition(hashtag=ig_comment_hashtag, text=ig_comment_text)
+# ig_save_media(hashtag=ig_save_hashtag, num_posts=int(ig_save_bookmark))
+# ig_unlike_action(media_id=ig_unlike_media_id)
+# ig_send_message(text=ig_dm_text, username=ig_send_dm_message)
+#
+# ig_logout_account()
