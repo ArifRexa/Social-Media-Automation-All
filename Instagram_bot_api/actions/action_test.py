@@ -111,7 +111,7 @@ class InstagramBot:
             logger.info("Logging in using username and password.")
             if self.client.login(self.username, self.password):
                 self.logged_in = True
-                # logger.info("Successfully logged in using username and password.")
+                logger.info("Successfully logged in using username and password.")
                 try:
                     logging.info(self.client.settings)
                     self.client.get_timeline_feed()
