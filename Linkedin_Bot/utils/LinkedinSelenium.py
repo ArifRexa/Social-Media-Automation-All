@@ -13,7 +13,7 @@ class Linkedin:
 
     linkedin_url = 'https://www.linkedin.com'
 
-    def __init__(self, username, password, headless=True):
+    def __init__(self, username, password, headless=False):
         self.username = username
         self.password = password
         if headless:
